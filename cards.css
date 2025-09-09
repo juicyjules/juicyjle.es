@@ -10,7 +10,6 @@
 }
 
 .card {
-    border-radius: 20px;
     width: 300px;
     flex: 0 1 30%;
     padding: 0.6rem 1.4rem;
@@ -25,12 +24,14 @@
     backdrop-filter: blur(10px);
     border-radius: 25px;
     border: 1px solid var(--light-gray);
-    transition: transform 0.1s linear;
-}
-.card:hover {
-    transform: translateY(-5px);
+    transition: transform 0.1s ease-out;
+    transform-style: preserve-3d; 
 }
 
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px var(--light-gray);
+}
 @media screen and (max-width: 960px) {
     .card {
         flex: 0 1 calc(50% - 1rem);
@@ -64,6 +65,7 @@
     min-width: 100%;
     height: 40%;
     position: relative;
+    pointer-events: none;
 }
 
 .card:hover>.card-img>img {
@@ -80,7 +82,7 @@
     filter: blur(20px);
     transform-origin: 50%;
     transform: scale(1.1);
-    transition: filter 0.2s ease-in-out;
+    transition: filter 0.4s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .card-header {
@@ -114,6 +116,7 @@
     padding-top: 0.5rem;
     font-size:1.2em;
     pointer-events: none;
+    backface-visibility: hidden;
 }
 
 .card-button {
@@ -141,3 +144,24 @@
 .backgrounded {
     z-index: -1;
 }
+.card::before {
+        content: '';
+        position: absolute;
+
+        /* Get position from the inline JS --x and --y variables */
+        left: var(--x);
+        top: var(--y);
+        
+        /* Center the light on the cursor */
+        transform: translate(-50%, -50%);
+
+        /* Light appearance */
+        background: radial-gradient(circle, white 0%, transparent 75%);
+        width: 70%;
+        height: 70%;
+        filter: blur(90px);
+        /* Initially hidden */
+        opacity: 1;
+        transition: opacity 0.3s;
+        z-index:-10;
+    }
