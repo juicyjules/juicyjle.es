@@ -93,6 +93,12 @@ h2 {
     font-family: "Major Mono Display", monospace;
 
 }
+.pd-bt {
+    padding-bottom:1em;
+}
+.pd-tp {
+    padding-top:1em;
+}
 main {
     flex: 1 0 auto;
     display:flex;
