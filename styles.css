@@ -145,6 +145,7 @@ section {
 }
 
 footer {
+    position:sticky;
     display: flex;
     justify-content: center;
     background: var(--milky-white);
@@ -152,6 +153,9 @@ footer {
     padding: 1.5rem;
     width: 100%;
     justify-items: center;
+    bottom:0;
+    left:0;
+    right:0;
 }
 
 .made-with {
