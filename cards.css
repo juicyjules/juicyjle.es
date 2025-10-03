@@ -30,7 +30,7 @@
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 20px var(--light-gray);
+    box-shadow: 0 8px 20px var(--milky-white);
 }
 @media screen and (max-width: 960px) {
     .card {
