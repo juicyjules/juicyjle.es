@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
         rel="stylesheet">
@@ -52,11 +51,11 @@
             <h1 class="random-text" style="width:100%">About me</h1>
             <div style="display:flex; flex-direction:row; justify-items: flex-start;gap:2rem">
             <div class="flex-col">
-                <p class="cursive" style="font-size:1.5rem;">making my way through the jungle of digital life</p>
+                <p class="cursive" style="font-size:1.5rem;">frag nicht was für saft</p>
                 <p>I'm <span class="typewriter jules typewritten">Jules</span>, computer scientist, musician and general cyber-enthusiast. </p>
                 <p>This page is mostly a hub for my online presence and for any services that are useful. Maybe you could even call it a portfolio. </p>
             </div>
-            <img style="border-radius: 100%; border: 4px white solid;backdrop-filter: grayscale(1);height:250px" src="images/jules.jpeg" alt="JuicyJul.es Logo" class="profile-pic">
+            <img style="border-radius: 100%; border: 4px white solid;backdrop-filter: grayscale(1);height:250px" src="images/meme.jpg" alt="JuicyJul.es Logo" class="profile-pic">
             </div>
             <div style="width:100%; height:5px; background-color:var(--milky-white);margin:1rem;"></div>
         </section>
@@ -149,8 +148,17 @@
     </main>
     <h1 class="random-text" style="width:100%">Get in Touch</h1>
     <section id="contact" class="container">
-        <div>
-            <p>Contact me here.</p>
+        <div class="center w-70">
+            <form action="https://formsubmit.co/contact@juicyjul.es" method="POST">
+            <input type="text" name="_honey" style="display:none">
+
+            <input type="hidden" name="_captcha" value="false">
+
+            <input class="glass" type="text" name="name" placeholder="Name" required>
+            <input class="glass" type="email" name="email" placeholder="Email Address" required>
+            <textarea class="glass" name="message" placeholder="Your Message" required></textarea>
+            <button class="glass" type="submit">Send</button>
+        </form>
         </div>
     </section>
     <footer>
