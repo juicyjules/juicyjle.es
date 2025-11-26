@@ -410,18 +410,13 @@ footer {
 .menu-button:hover .bar:nth-child(3){
     transform: rotateY(-65deg);
 }
-.menu-button.active:hover .bar:nth-child(1) {
-    transform: rotateY(65deg);
-}
-.menu-button.active:hover .bar:nth-child(2) {
-    transform: scaleX(1.2);
-}
-.menu-button.active:hover .bar:nth-child(3){
-    transform: rotateY(-65deg);
-}
+
 .menu-button.active .bar:nth-child(1) {
     transform-origin: center;
     transform: translateY(13px) rotate(-45deg);
+}
+.menu-button.active:hover .bar:nth-child(1) {
+    transform: scale(0.9) translateY(13px) rotate(-45deg);
 }
 .menu-button.active .bar:nth-child(2) {
     transform: scaleX(0);
@@ -430,14 +425,13 @@ footer {
     transform: translateY(-13px) rotate(45deg);
     transform-origin: center;
 }
+.menu-button.active:hover .bar:nth-child(3) {
+    transform: scale(0.9) translateY(-13px) rotate(45deg);
+}
 .menu-button.active .bar {
     opacity:1;
 }
 
-.menu-button.active:hover .bar{
-    transform: scale(0.5);
-    transition: all 0.3s ease-in-out;
-}
 .overlay {
     /* Positioning & Sizing */
     position: fixed;
