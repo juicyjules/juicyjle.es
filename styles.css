@@ -300,7 +300,19 @@ footer {
         padding-left: 1.5rem!important;
     }
 }
-
+.abt-container {
+    display:flex; 
+    flex-direction:row; 
+    justify-items: flex-start;
+    gap:2rem;
+}
+@media screen and (max-width: 768px) {
+    .abt-container {
+        flex-direction: column!important;
+        justify-items: center;
+        align-items: center;;
+    }
+}
 .hidden {
     display: none !important;
 }
