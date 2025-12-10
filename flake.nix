@@ -1,27 +1,27 @@
 {
-    description = "The new juicyjul.es website";
+  description = "Setup Juicyjul.es";
 
-    inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+  };
 
-    outputs = { self, nixpkgs }:
-        let
-            system = "x86_64-linux";
-            pkgs = import nixpkgs { inherit system; };
-        in
-        {
-            packages.${system}.default = pkgs.stdenv.mkDerivation {
-                pname = "juicyjul-es";
-                version = "1.0.0";
-                src = ./src;
-                installPhase = ''
-                    mkdir -p $out
-                    cp -r ./* $out/
-                '';
-            };
+  outputs = { self, nixpkgs }: {
+    defaultPackage.x86_64-linux = let
+      pkgs = import nixpkgs { system = "x86_64-linux"; };
+      src = ./.;
+    in
+      pkgs.stdenv.mkDerivation {
+        pname = "juicyjul.es";
+        version = "0.1";
 
-            # For 'nix develop' shell
-            devShells.${system}.default = pkgs.mkShell {
-                buildInputs = [ pkgs.python3  ];
-            };
-        };
+        src = src;
+
+        installPhase = ''
+          mkdir -p $out
+          cp -r $src $out/
+        '';
+
+        sourceRoot = ".";
+      };
+  };
 }
